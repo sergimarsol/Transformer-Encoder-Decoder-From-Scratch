@@ -329,12 +329,12 @@ def run_part3(tokenizer, train_LM, test_LM, methods):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="CSE256 PA2 — Transformer Encoder/Decoder experiments",
+        description="Transformer encoder/decoder from scratch: classification, language modeling and attention-variant experiments",
         formatter_class=argparse.RawTextHelpFormatter,
     )
     parser.add_argument(
         'part', choices=['part1', 'part2', 'part3'],
-        help="Which part of the assignment to run:\n"
+        help="Which experiment to run:\n"
              "  part1  — Encoder + Classifier (train & evaluate)\n"
              "  part2  — Decoder LM pretraining (full attention)\n"
              "  part3  — Architectural explorations (window, alibi, block_sparse)",

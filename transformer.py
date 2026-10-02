@@ -340,7 +340,7 @@ class TransformerDecoder(nn.Module):
                  block_sparse_size=None):
         super().__init__()
         if d_ff is None:
-            d_ff = 100  # assignment specifies feedforward hidden dim = 100
+            d_ff = 100  # default feedforward hidden dim
 
         self.window_size = window_size
         self.use_alibi = use_alibi

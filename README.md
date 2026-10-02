@@ -21,7 +21,7 @@ These pieces are used for two tasks on a corpus of US presidential speeches (Oba
 1. **Speaker classification:** an encoder plus a feed-forward classifier predicts which of the three politicians said a speech segment.
 2. **Autoregressive language modeling:** a GPT-like decoder trained on next-token prediction and evaluated by perplexity on held-out speeches from each politician.
 
-On top of the full-attention decoder, the project tests **three changes to attention**: local sliding-window attention, blockwise sparse attention and ALiBi relative-position biases. Each variant changes only the attention pattern and keeps exactly the same parameter count, so the comparisons are controlled. It was built for UCSD CSE 256 (Statistical NLP), Winter 2026.
+On top of the full-attention decoder, the project tests **three changes to attention**: local sliding-window attention, blockwise sparse attention and ALiBi relative-position biases. Each variant changes only the attention pattern and keeps exactly the same parameter count, so the comparisons are controlled.
 
 ## Highlights
 
@@ -79,7 +79,7 @@ All variants share one boolean mask, built once from the token distance `i − j
 
 ## Results
 
-All numbers come from the project report (`SergiMarsol_PA2_CSE256.pdf`) and from the logged values in `plot_scripts/`. Setup: seed 42, d_model = 64, 2 heads, 4 layers, context 32, batch size 16, Adam with lr 1e-3.
+All numbers come from the project report (`report.pdf`) and from the logged values in `plot_scripts/`. Setup: seed 42, d_model = 64, 2 heads, 4 layers, context 32, batch size 16, Adam with lr 1e-3.
 
 ### Speaker classification (encoder + classifier, 15 epochs)
 
@@ -137,7 +137,7 @@ The heatmaps below are for the sentence "But new threats also require new ⟨unk
 | **Decoder L1 H1** | **Decoder L4 H1** |
 | ![](figures/decoder_attention_L1H1.png) | ![](figures/decoder_attention_L4H1.png) |
 
-The full write-up is in [`SergiMarsol_PA2_CSE256.pdf`](SergiMarsol_PA2_CSE256.pdf).
+The full write-up is in [`report.pdf`](report.pdf).
 
 ## Tech stack
 
@@ -157,7 +157,7 @@ The full write-up is in [`SergiMarsol_PA2_CSE256.pdf`](SergiMarsol_PA2_CSE256.pd
 ├── plot_scripts/            # Scripts that regenerate the result figures
 ├── figures/                 # Result plots and attention heatmaps used in this README
 ├── speechesdataset/         # Speech segments (classification TSVs, LM train/test text)
-└── SergiMarsol_PA2_CSE256.pdf  # Project report
+└── report.pdf  # Technical report
 ```
 
 ## Getting started
@@ -188,7 +188,7 @@ python plot_scripts/plot_part3.py
 
 ## Acknowledgements
 
-Built by **Sergi Marsol** for UCSD CSE 256 (Statistical Natural Language Processing). The speeches dataset and the general project setup come from the course.
+Built by **Sergi Marsol** at UC San Diego (CSE 256, Statistical NLP, Winter 2026). The speeches dataset and the experimental setup were provided by the course.
 
 ## License
 
